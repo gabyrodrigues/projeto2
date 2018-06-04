@@ -1,1 +1,4 @@
-print("oioioi");
+void setup(){
+}
+void draw(){
+}
