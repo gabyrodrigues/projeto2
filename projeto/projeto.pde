@@ -1,20 +1,24 @@
 //Importa a biblioteca ControlP5
 import controlP5.*;
 
+ColorHUD hud;
+Brush brush;
 float H = 0;
 float S = 0;
 float B = 100;
-//Objeto da classe ControlP5, que será utilizado para criar elementos de interface gráfica.
-ControlP5 slider;
-ControlP5 btn;
+
 
 void setup(){
   size(960,560);
   colorMode(HSB, 200, 200, 100);
+  hud = new ColorHUD(0, 0, 100, 685, 23, 223, color(0, 0, 100), color(0, 0, 100));
+  brush = new Brush(mouseX, mouseY, 5);
 }
 void draw(){
    stage();
-   exibeCor();
+   hud.exibeCor();
+   brush.exibeBrush(mouseX, mouseY);
+   brush.previewBrush();
 }
 void stage(){
   fill(50);
@@ -34,19 +38,4 @@ void stage(){
   s.endContour();
   
   s.endShape();
-}
-void exibeCor(){
-  for(int i = 0; i < 200; i++){
-    for(int j = 0; j < 200; j++){
-      stroke(0+j, 0+i, B);
-      point(685+j, 23+i);  
-    }
-  }
-  for(int i = 0; i < 200; i++){
-   for(int j = 0; j < 20; j++){
-     stroke(i);
-     point(900+j, 23+i);
-   }
-  }
-     
 }
