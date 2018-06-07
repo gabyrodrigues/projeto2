@@ -2,7 +2,8 @@ class Brush {
   float posX;
   float posY;
   float tam;
-
+  color corAtual;
+  
   Brush(float posX, float posY, float tam) {
     this.posX = posX;
     this.posY = posY;
@@ -10,26 +11,29 @@ class Brush {
   }
 
   void exibeBrush() {
+    fill(corAtual);
+    noStroke();
     ellipse(posX, posY, tam, tam);
   }
 
-  void atualizaPosicao() {
-    posX = mouseX;
-    posY = mouseY;
+  void atualizaPosicao(float x, float y) {
+    posX = x;
+    posY = y;
   }
 
-  void atualizaTamanho() {
-    tam = 5;
-    //tamanho maximo 91
-    //tamanho minimo 5;
-    //slider(85 de range);
+  void atualizaTamanho(float x) {
+    tam = x;
+  }
+  
+  void atualizaCorBrush(color cor){
+    corAtual = cor;
   }
 
   void previewBrush() {
-    fill(0, 0, 100);
+    fill(255);
     stroke(0);
     rect(764, 375, 95, 95);
-    ellipse(811, 422, 5, 5);
+    ellipse(811, 422, tam, tam);
   }
 
   float getPosX() {
