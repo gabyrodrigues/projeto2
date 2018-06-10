@@ -94,17 +94,17 @@ void Buttons() {
     .setSize(93, 93);
     
   //criação dos botões de formatos de imagem
-  Buttons.addButton("JPEG") //criação do botão para ser possível salvar a imagem em jpg
+  Buttons.addButton("JPEG") //a partir da criação desse botão, quando o usuário clicá-lo, será possível salvar a imagem em jpg
     .setValue(0)
     .setPosition(700, 487)
     .setSize(50, 15);
 
-  Buttons.addButton("PNG") //criação do botão para ser possível salvar a imagem em png
+  Buttons.addButton("PNG") //quando o usuário clicar nesse botão, será possível salvar a imagem em png
     .setValue(0)
     .setPosition(775, 487)
     .setSize(50, 15);
 
-  Buttons.addButton("TIFF") ////criação do botão para salvar a imagem no formato tiff
+  Buttons.addButton("TIFF") ////quando o usuário clicar nesse botão, será possível salvar a imagem em tiff
     .setValue(0)
     .setPosition(850, 487)
     .setSize(50, 15);
