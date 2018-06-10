@@ -3,6 +3,7 @@ class Brush {
   float posY;
   float tam;
   color corAtual;
+  boolean mousePress = false;
   
   Brush(float posX, float posY, float tam) {
     this.posX = posX;
@@ -29,11 +30,21 @@ class Brush {
     corAtual = cor;
   }
 
-  void previewBrush() {
+  void previewBrush(int posX, int posY) {
     fill(255);
     stroke(0);
-    rect(764, 375, 95, 95);
-    ellipse(811, 422, tam, tam);
+    rect(posX, posY, 91, 91);
+    fill(corAtual);
+    noStroke();
+    ellipse(posX+46, posY+46, tam, tam);
+  }
+  
+  void mousePress() {
+     if(mousePressed && (mouseButton == LEFT)) {
+       mousePress = true;
+     } else {
+       mousePress = false;
+     }
   }
 
   float getPosX() {
@@ -44,5 +55,8 @@ class Brush {
   }
   float getTam() {
     return tam;
+  }
+  boolean getMousePress() {
+    return mousePress;
   }
 }
