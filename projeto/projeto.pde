@@ -28,7 +28,7 @@ void setup() {
 
   //criacao do objeto brush
   brush = new Brush(mouseX, mouseY, 5, "Circulo");
-  //criacao do objeto colorWhell
+  //criacao do objeto colorWheel
   colorWheel = new ControlP5(this);
   colorWheel.addColorWheel("cor", 700, 23, 200 )
     .setRGB(color(128, 0, 255));
@@ -44,18 +44,18 @@ void draw() {
   corBrush = colorWheel.get(ColorWheel.class, "cor").getRGB();
   colorWheel.get(ColorWheel.class, "cor").getRGB();
 
-  Cursor();  //verifica se o cusor deve ser desenhado
-  brush.mousePress(); //metodo que verifica se pode denhar
+  Cursor();  //verifica se o cursor deve ser desenhado
+  brush.mousePress(); //metodo que verifica se pode desenhar
 
-  //se o brush é desenhado apenas se o mouse passar dentro da área do quadrado branco, sendo possível apenas desenhar nesse espaço
+  //condição: se o brush é desenhado apenas se o mouse passar dentro da área do quadrado branco, sendo possível apenas desenhar nesse espaço
   if (brush.getMousePress() == true && (mouseX >= 23 && mouseX <= 685 && mouseY >= 23 && mouseY <= height-23)) { 
     brush.exibeBrush();
   }
   stage(); //chamada da função stage para desenhá-la na tela
 
   //chamadas da classe brush
-  brush.atualizaTamanho(brushSlider.getValue()); //metodo que atuliza o tamnho do brush
-  brush.atualizaCorBrush(corBrush); // metodo que atuliza a cor do brush
+  brush.atualizaTamanho(brushSlider.getValue()); //metodo que atualiza o tamanho do brush
+  brush.atualizaCorBrush(corBrush); // metodo que atualiza a cor do brush
   brush.previewBrush(700, 240); //chamada do metodo da classe brush que desenha o quadrado de pré-visualização do tamanho do brush
   brush.atualizaPosicao(mouseX, mouseY); /*chamada do metodo da classe brush que atualiza a posição do brush utilizando os
                                           parametros do movimento do mouse para essa atualização */
