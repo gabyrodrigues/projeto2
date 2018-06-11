@@ -15,7 +15,7 @@ class Brush {
     this.Forma = forma;
   }
 
-  //metodo de exibicao do brush
+  //metodo de exibição do brush
   void exibeBrush() {
     fill(corAtual);
     noStroke();
@@ -38,13 +38,13 @@ class Brush {
     }
   }
   
-  //metodo de atulizacao da posicao do brush
+  //metodo que atualiza da posição do brush
   void atualizaPosicao(float x, float y) {
     posX = x;
     posY = y;
   }
   
-  //metodo que atuliza o tamanho do brush
+  //metodo que atualiza o tamanho do brush
   void atualizaTamanho(float x) {
     tam = x;
   }
@@ -54,7 +54,7 @@ class Brush {
     corAtual = cor;
   }
 
-  //metodo que que gera a visualizacao previa do brush
+  //metodo que que gera a visualização prévia do brush
   void previewBrush(int posX, int posY) {
     fill(255);
     stroke(0);
@@ -102,7 +102,7 @@ class Brush {
     }
   }
   
-  //metodo que checa se o mouse foi precionado
+  //metodo que checa se o mouse foi pressionado
   void mousePress() {
      if(mousePressed && (mouseButton == LEFT)) {
        mousePress = true;

@@ -9,7 +9,7 @@ ControlP5 colorWheel; /*objeto do próprio control p5 que como o próprio nome d
  que controla hue, saturation e brightness da cor do brush */
 
 //Objetos dos tipos específicos dos elementos da interface gráfica.
-Slider brushSlider;  //slide do tamanho do brush
+Slider brushSlider;  //slider do tamanho do brush
 Button btnSalvar; //botão de salvar
 
 //Declaracao do objeto brush
@@ -18,7 +18,7 @@ Brush brush;
 InfoFile infoFile;
 
 color corBrush; //variável para a cor do brush
-int cor = color(100); //cor incial do colorWheel
+int cor = color(100); //cor inicial do colorWheel
 
 void setup() {
   size(923, 560); //tamanho da tela a ser criada 
