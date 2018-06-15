@@ -32,6 +32,8 @@ void setup() {
   colorWheel = new ControlP5(this);
   colorWheel.addColorWheel("cor", 700, 23, 200 )
     .setRGB(color(128, 0, 255));
+  //criacao do objeto infoFile
+  infoFile = new InfoFile();
 
   sliderBrushSize(); //criacao dos Sliders
   Buttons(); //criacao dos Botoes
@@ -169,21 +171,21 @@ void controlEvent(ControlEvent event) {
     if (event.getController().getName() == "JPEG") {
       PImage img = get(23, 23, 662, 514);
       img.save(fileName.get(Textfield.class, "Nome do Arquivo").getText()+".jpeg");
-      infoFile.saveCopyright(fileName.get(Textfield.class, "Nome do Arquivo").getText());
+      infoFile.saveCopyright(fileName.get(Textfield.class, "Nome do Arquivo").getText()+".jpeg");
     }
 
     //salva a imagem em .png caso o botao seja pressionado e salva o copyright
     if (event.getController().getName() == "PNG") {
       PImage img = get(23, 23, 662, 514);
       img.save(fileName.get(Textfield.class, "Nome do Arquivo").getText()+".png");
-      infoFile.saveCopyright(fileName.get(Textfield.class, "Nome do Arquivo").getText());
+      infoFile.saveCopyright(fileName.get(Textfield.class, "Nome do Arquivo").getText()+".png");
     }
 
     //salva a imagem em .tiff caso o botao seja pressionado e salva o copyright
     if (event.getController().getName() == "TIFF") {
       PImage img = get(23, 23, 662, 514);
       img.save(fileName.get(Textfield.class, "Nome do Arquivo").getText()+".tiff");
-      infoFile.saveCopyright(fileName.get(Textfield.class, "Nome do Arquivo").getText());
+      infoFile.saveCopyright(fileName.get(Textfield.class, "Nome do Arquivo").getText()+".tiff");
     }
     
     //muda a forma do brush para QUADRADO caso o botao seja pressionado

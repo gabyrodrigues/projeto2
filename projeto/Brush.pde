@@ -1,3 +1,4 @@
+//Classe que gera o Brush do programa
 class Brush {
   //parametros da classe
   float posX;
